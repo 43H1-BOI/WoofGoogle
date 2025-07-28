@@ -19,7 +19,30 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             WoofGoogleTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                Scaffold(topBar = {
+                    CenterAlignedTopAppBar(
+                        title = {
+                            Row(
+                                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                                verticalAlignment = Alignment.CenterVertically,
+                            ) {
+                                Icon(
+                                    painterResource(R.drawable.ic_woof_logo),
+                                    stringResource(R.string.app_name),
+                                    tint = Color.Unspecified
+                                )
+//                                Spacer(modifier = Modifier.width(8.dp))
+                                Text(
+                                    stringResource(R.string.app_name),
+                                    fontFamily = Serif,
+                                    fontStyle = MaterialTheme.typography.displayLarge.fontStyle,
+                                    fontSize = 26.sp
+                                )
+                            }
+                        },
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                }, modifier = Modifier.fillMaxSize()) { innerPadding ->
                     LazyColumn(modifier = Modifier.padding(innerPadding)) {
                         items(Data.getData()){
                             DogCard(it)
