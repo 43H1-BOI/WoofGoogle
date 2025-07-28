@@ -20,10 +20,11 @@ class MainActivity : ComponentActivity() {
         setContent {
             WoofGoogleTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    LazyColumn(modifier = Modifier.padding(innerPadding)) {
+                        items(Data.getData()){
+                            DogCard(it)
+                        }
+                    }
                 }
             }
         }
