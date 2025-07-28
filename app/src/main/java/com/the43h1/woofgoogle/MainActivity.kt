@@ -20,28 +20,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             WoofGoogleTheme {
                 Scaffold(topBar = {
-                    CenterAlignedTopAppBar(
-                        title = {
-                            Row(
-                                horizontalArrangement = Arrangement.spacedBy(8.dp),
-                                verticalAlignment = Alignment.CenterVertically,
-                            ) {
-                                Icon(
-                                    painterResource(R.drawable.ic_woof_logo),
-                                    stringResource(R.string.app_name),
-                                    tint = Color.Unspecified
-                                )
-//                                Spacer(modifier = Modifier.width(8.dp))
-                                Text(
-                                    stringResource(R.string.app_name),
-                                    fontFamily = Serif,
-                                    fontStyle = MaterialTheme.typography.displayLarge.fontStyle,
-                                    fontSize = 26.sp
-                                )
-                            }
-                        },
-                        modifier = Modifier.fillMaxWidth()
-                    )
+                    WoofTopAppBar()
                 }, modifier = Modifier.fillMaxSize()) { innerPadding ->
                     LazyColumn(modifier = Modifier.padding(innerPadding)) {
                         items(Data.getData()){
@@ -52,6 +31,32 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+}
+
+@Composable
+fun WoofTopAppBar() {
+    CenterAlignedTopAppBar(
+        title = {
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Icon(
+                    painterResource(R.drawable.ic_woof_logo),
+                    stringResource(R.string.app_name),
+                    tint = Color.Unspecified
+                )
+//                                Spacer(modifier = Modifier.width(8.dp))
+                Text(
+                    stringResource(R.string.app_name),
+                    fontFamily = Serif,
+                    fontStyle = MaterialTheme.typography.displayLarge.fontStyle,
+                    fontSize = 26.sp
+                )
+            }
+        },
+        modifier = Modifier.fillMaxWidth()
+    )
 }
 
 @Composable
