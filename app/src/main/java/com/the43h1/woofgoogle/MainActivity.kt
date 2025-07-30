@@ -109,6 +109,9 @@ fun DogCard(dogData: DogData, modifier: Modifier = Modifier) {
         modifier = modifier
             .padding(8.dp)
             .fillMaxWidth()
+            .animateContentSize(
+                animationSpec = tween(250, easing = FastOutSlowInEasing)
+            )
             .clickable(onClick = { isExpanded = !isExpanded }),
         shape = RoundedCornerShape(0.dp, 12.dp, 0.dp, 12.dp)
     ) {
