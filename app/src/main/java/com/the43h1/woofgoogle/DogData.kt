@@ -6,11 +6,11 @@ import androidx.annotation.StringRes
 data class DogData(
     @DrawableRes val image: Int,
     @StringRes val name: Int,
-    var hobbies: MutableList<String>,
+    @StringRes val about: Int,
     var age: Int
 )
 
-class Data {
+object Data {
     fun getData(): List<DogData> {
         return listOf(
             DogData(R.drawable.dog_1_koda, R.string.dog_name_1, R.string.dog_description_1, 8),
