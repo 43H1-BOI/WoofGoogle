@@ -8,9 +8,7 @@ An Open Source Practice App created using the official Android Developers **Mate
 [Build Beautiful App - Android Developers Codelab](https://developer.android.com/courses/pathways/android-basics-compose-unit-3-pathway-3)
 
 ## Screenshots 🖼️
-![Light Mode](screenshots/light_mode.png)
-![Dark Mode](screenshots/dark_mode.png)
-
+<img src="screenshots/light_mode.png" alt="Light Mode" width="300"/> <img src="screenshots/dark_mode.png" alt="Dark Mode" width="300"/>
 
 ## Description 📖
 

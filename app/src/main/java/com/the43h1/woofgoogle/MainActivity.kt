@@ -109,6 +109,10 @@ fun DogCard(dogData: DogData, modifier: Modifier = Modifier) {
         mutableStateOf(false)
     }
 
+    val upIcon by animateFloatAsState(
+        targetValue = if(isExpanded) 180f else 0f,
+    )
+
     Card(
         modifier = modifier
             .padding(8.dp)
@@ -155,10 +159,7 @@ fun DogCard(dogData: DogData, modifier: Modifier = Modifier) {
                         imageVector = Icons.Default.KeyboardArrowDown,
                         contentDescription = "Show More",
                         modifier = Modifier
-                            .rotate(if (isExpanded) 180f else 0f)
-                            .animateContentSize(
-                                // TODO(Wanna Animate This)
-                            )
+                            .rotate(upIcon)
                             .weight(1f)
                     )
                 }
