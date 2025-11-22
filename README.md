@@ -49,7 +49,7 @@ This project serves as practice material for developers learning modern Android 
 
 Before building this app, ensure you have:
 
-- **Android Studio** (Hedgehog 2023.1.1 or later recommended)
+- **Android Studio** (Latest stable version recommended)
 - **JDK 11** or higher
 - **Android SDK** with API level 29 or higher
 - **Gradle 8.0+** (included via wrapper)
